@@ -1,4 +1,5 @@
-@extends ('templates.template')
+@extends ('content.livros.template.layout')
+
 @section('content')
 <div class="container-create">
     <div class="container-create-conteudo">
@@ -62,21 +63,20 @@
                 <input type="file" id="image" name="image" accept="image/*" required>
             </div>
 
-            <!-- Campo para as Categorias (Foreign Key) -->
-            <fieldset>
-                <legend>Categorias Livro</legend>
+            <!-- Checkboxes -->
+            <fieldset class="border border-gray-300 rounded-lg p-4 max-w-md">
+                <legend class="font-semibold">Categorias Livro</legend>
                 @foreach ($categorias as $categoria)
-                <input type="checkbox" name="categorias[]" value="{{ $categoria->id }}" id="{{ $categoria->id }}">
-                <label for="{{ $categoria->id }}">{{ $categoria->categoria }}</label>
-
+                <div class="flex items-center space-x-2 mt-2">
+                    <input type="checkbox" name="categorias[]" value="{{ $categoria->id }}" id="{{ $categoria->id }}"
+                        class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring focus:ring-blue-300">
+                    <label for="{{ $categoria->id }}">{{ $categoria->categoria }}</label>
+                </div>
                 @endforeach
             </fieldset>
 
-            <!-- Botão de envio -->
             <div class="textfield-botao">
-                <div class="textfield-botao-submit">
-                    <input type="submit" value="Salvar livro" />
-                </div>
+                <input class="btn-salvar" type="submit" value="Salvar categoria" />
             </div>
         </form>
     </div>

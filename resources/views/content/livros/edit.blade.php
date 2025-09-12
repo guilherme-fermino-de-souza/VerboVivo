@@ -1,32 +1,27 @@
-@extends ('templates.template')
+@extends ('content.livros.template.layout')
+
 @section('content')
 <div class="container-create">
     <div class="container-create-conteudo">
-        <h1>Edit Product</h1>
-        <div>
-            @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-                @endforeach
-            </ul>
-            @endif
-        </div>
+        <h1>Editar Livro</h1>
         <form method="post" action="{{route('livro.update', ['livro' => $livro])}}" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="textfield">
                 <input type="text" id="titulo" name="titulo" value="{{$livro->titulo}}" placeholder="título" required>
+                <label for="titulo">Título</label>
             </div>
 
             <!-- Campo para a descrição -->
             <div class="textfield">
                 <input type="text" id="descricao" name="descricao" value="{{$livro->descricao}}" placeholder="descrição" required>
+                <label for="descricao">Descrição</label>
             </div>
 
             <!-- Campo para o autor -->
             <div class="textfield">
                 <input type="text" id="autor" name="autor" value="{{$livro->autor}}" placeholder="autor" required>
+                <label for="autor">Autor</label>
             </div>
 
             <!-- Campo para o Idioma -->
@@ -41,21 +36,25 @@
             <!-- Campo para o país de origem -->
             <div class="textfield">
                 <input type="text" id="paisorigem" name="paisorigem" value="{{$livro->paisorigem}}" placeholder="país origem" required>
+                <label for="paisorigem">País de origem</label>
             </div>
 
             <!-- Campo para o ano de lançamento -->
             <div class="textfield">
                 <input type="date" id="anolancamento" name="anolancamento" value="{{$livro->anolancamento}}" placeholder="ano lançamento" required>
+                <label for="anolancamento">Ano de Publicação</label>
             </div>
 
             <!-- Campo para o preço -->
             <div class="textfield">
                 <input type="number" step="0.01" id="preco" name="preco" value="{{$livro->preco}}" placeholder="preço" required>
+                <label for="preco">Preço</label>
             </div>
 
             <!-- Campo para a quantidade -->
             <div class="textfield">
                 <input type="number" id="quantidade" name="quantidade" value="{{$livro->quantidade}}" placeholder="quantidade" required>
+                <label for="quantidade">quantidade</label>
             </div>
 
             <!-- Campo para a imagem -->
@@ -67,9 +66,7 @@
             </div>
 
             <div class="textfield-botao">
-                <div class="textfield-botao-submit">
-                    <input type="submit" value="Atualizar Livro" />
-                </div>
+                <input class="btn-salvar" type="submit" value="Salvar categoria" />
             </div>
         </form>
     </div>

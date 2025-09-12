@@ -31,18 +31,6 @@ Route::get('/', function () {
 //Consumidor
 Route::middleware('auth')->group(function () {
 
-    Route::get('/carousel', function () {
-        return view('templates.carousel');
-    })->name('carousel'); //Página Principal 
-
-    Route::get('/cardshome', function () {
-        return view('templates.cardshome');
-    })->name('cardshome'); //Página Principal 
-
-    Route::get('/cardstatik', function () {
-        return view('templates.cardstatik');
-    })->name('cardstatik'); //Página Principal 
-
     //Contato
     Route::resource('contato', ContatoController::class)->names('contato');
 

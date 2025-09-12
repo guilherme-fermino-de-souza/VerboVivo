@@ -7,6 +7,6 @@
         @include('templates.cardstatik')
 
         @if(Auth::check())
-                @include('contatos.create')
+                @include('content.contatos.create')
         @endif
 @endsection

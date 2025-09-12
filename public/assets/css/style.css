@@ -1,3 +1,4 @@
+/* Reset básico e variáveis */
 * {
     margin: 0;
     padding: 0;
@@ -6,26 +7,20 @@
 }
 
 :root {
-    --cor-pricipal: #FFFFFF;
-    --cor-secundaria: #254D6B;
-    --cor-terciaria: #cbd538;
-    --cor-texto: #0D0D0D;
-    /* Cinza escuro */
-    --cor-font-link: #000000;
-    --light-black: #0D0D0D;
-    --cor-font-link-apagado: #969696;
-    --marrom-principal: #76300E;
-    --vermelho-principal: #cd5c5c;
-    --vermelho-segundo: #f08080;
-    --verde-principal: #094949;
-    --salmao: #F3B394;
-    /* Home Cores*/
-    --azul: #2A71B1;
+    --cor-tema: #3B3F8C;
+    --cor-secundaria: #D9A404;
+    --cor-fundo: #262626;
+    --cor-branco: #D0D6D9;
+    --cor-preto: #000000;
+    --cor-vermelho: #F22222;
+
+    --preto: #0D0D0D;
+    --cinza: #404040;
+    --branco: #F2F2F2;
+    --branco-light: #ccc;
+    --azul: #1d3e55;
     --verde: #03A64A;
-    --amarelo: #F2E500;
-    --vermelho: #E52125;
-    --rosa: #C4027D;
-    --roxo: #6D398B;
+    --vermelho: #F26D6D;
 }
 
 body {
@@ -36,194 +31,11 @@ body {
     margin-left: auto;
 }
 
-/*--------------------------------Navbar-------------container-index-------------------------------------------------------------*/
-header {
-    background-color: var(--cor-pricipal);
-    height: 60px;
-    width: 100%;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    width: 85%;
-}
-
-.V {
-    display: flex;
-    flex-direction: row;
-}
-
-.nav-logo h1 {
-    font-size: 50px;
-    color: var(--cor-font-link);
-}
-
-.nav-logo p {
-    font-size: 50px;
-    color: var(--cor-secundaria);
-}
-
-.nav-logo a {
-    text-decoration: none;
-}
-
-.nav-barradebusca {
-    display: flex;
-    width: 750px;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-barradebusca input {
-    width: 100%;
-    height: 35px;
-    border-radius: 25px;
-    padding: 0 10px;
-    color: var(--cor-font-link-apagado);
-}
-
-.nav-links {
-    width: 300px;
-}
-
-.nav-links li {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--cor-font-link);
-    margin: 0 5px;
-    border-radius: 50px;
-    padding: 7.5px;
-}
-
-.nav-links a:hover {
-    color: var(--cor-secundaria);
-    transition: .7s;
-}
-
-.nav-links img {
-    width: 50px;
-}
-
-.conta-link-header a:hover {
-    background-color: var(--cor-terciaria);
-    transition: 1s;
-}
-
-/*-------------------------------Sub-Navbar------------------------------------------------------------------------*/
-.subnav {
-    width: 200%;
-    background-color: var(--cor-pricipal);
-}
-
-.subnav-container {
-    width: 100%;
-    margin: auto;
-    background-color: var(--cor-pricipal);
-}
-
-.subnav-container ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    margin: 0;
-    padding: 0;
-}
-
-.subnav-container li {
-    display: inline-block;
-    position: relative;
-}
-
-.subnav-container a {
-    display: block;
-    background-color: var(--cor-pricipal);
-    padding: 14px 20px;
-    color: var(--cor-font-link);
-    text-decoration: none;
-}
-
-.subnav-container a:hover {
-    color: var(--cor-secundaria);
-    transition: .75s;
-}
-
-.drop-link {
-    color: var(--cor-font-link-apagado);
-}
-
-.drop-link :hover {
-    color: var(--cor-font-link);
-}
-
-.subnav-maisvendidos a {
-    background-color: var(--verde-principal);
-    color: var(--cor-pricipal);
-    border-radius: 25px;
-    padding: 5px;
-}
-
-.subnav-maisvendidos a:hover {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-pricipal);
-    transition: .75s;
-}
-
-.dropdown {
-    display: flex;
-    flex-direction: row;
-}
-
-/* Estilo para o dropdown */
-.conteudo-dropdown {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    z-index: 1;
-}
-
-.conteudo-dropdown a {
-    padding: 12px 16px;
-    text-align: left;
-}
-
-.dropdown:hover .conteudo-dropdown {
-    display: block;
-    transition: .75s;
-}
-
-.admin-subnav {
-    background-color: var(--cor-font-link);
-}
-
-.admin-subnav a {
-    background-color: var(--cor-font-link);
-    color: var(--cor-pricipal);
-}
-
-.admin-subnav a:hover {
-    background-color: var(--cor-font-link);
-    color: var(--cor-secundaria);
-}
-
 /*--------- Home -----------------------------------------------------------------------------------------------------------*/
 .home {
     background-color: var(--cor-texto);
 }
+
 .home .slider-container {
     position: relative;
     height: 100%;
@@ -247,9 +59,9 @@ nav {
     width: 100%;
     height: 100%;
     background-image: url("/images/home/01-bookstore.jpg");
-    
+
     background-position: center;
-    filter:grayscale(30%);
+    filter: grayscale(30%);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -284,7 +96,7 @@ nav {
     }
 }
 
-.home .slider-wrapper .slider-item .slider-content > * {
+.home .slider-wrapper .slider-item .slider-content>* {
     max-width: 35%;
 }
 
@@ -352,28 +164,49 @@ nav {
     animation: animate_opacity .6s 1.5s linear forwards;
 }
 
-.home .slider-item.swiper-slide-active .slide-button  {
+.home .slider-item.swiper-slide-active .slide-button {
     animation: animate_button .8s 1s linear forwards;
 }
 
 @keyframes animate_button {
     100% {
         opacity: 1;
-            width: 250px;
+        width: 250px;
 
     }
 }
 
-.home #home-button-red:hover { /* botões personalizados 1*/
-    background: var(--vermelho-principal);
+.home #home-button-red {
+    /* botões personalizados 1*/
+    background: var(--cor-tema);
+    transition: .7s;
 }
 
-.home #home-button-blue:hover { /* botões personalizados 2*/
-    background: var(--verde-principal);
-}
-
-.home #home-button-yellow:hover { /* botões personalizados 3*/
+.home #home-button-blue {
+    /* botões personalizados 2*/
     background: var(--cor-secundaria);
+    transition: .7s;
+}
+
+.home #home-button-yellow {
+    /* botões personalizados 3*/
+    background: var(--cor-vermelho);
+    transition: .7s;
+}
+
+.home #home-button-red:hover {
+    /* botões personalizados 1*/
+    background: #000dff;
+}
+
+.home #home-button-blue:hover {
+    /* botões personalizados 2*/
+    background: #ffbf00;
+}
+
+.home #home-button-yellow:hover {
+    /* botões personalizados 3*/
+    background: #ff0000;
 }
 
 .home .slider-container .slider-controls {
@@ -394,7 +227,7 @@ nav {
     position: relative;
     display: flex;
     margin: 0 auto;
-    padding: 0  20px;
+    padding: 0 20px;
     max-width: 1400px;
     list-style: none;
     justify-content: space-between;
@@ -415,7 +248,8 @@ nav {
     padding: 20px 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
-.home .slider-navigations button{
+
+.home .slider-navigations button {
     position: absolute;
     top: 50%;
     height: 40px;
@@ -435,20 +269,47 @@ nav {
 }
 
 .home .slider-navigations button:hover {
-    background: var(--cor-font-link);
-    color: var(--cor-texto);
+    background: var(--preto);
+    color: var(--branco-light);
 }
 
 .home .slider-navigations button#slide-prev {
     left: 20px;
+    top: 45%;
+    color: var(--branco);
+    background-color: var(--cor-tema);
+    transition: .7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .home .slider-navigations button#slide-next {
     right: 20px;
+    top: 45%;
+    color: var(--branco);
+    background-color: var(--cor-secundaria);
+    transition: .7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.home .slider-navigations button#slide-prev:hover {
+    color: var(--branco-light);
+    background-color: var(--cor-secundaria);
+}
+
+
+.home .slider-navigations button#slide-next:hover {
+    color: var(--branco-light);
+    background-color: var(--cor-tema);
+}
+
 /*--------- Responsivo -----*/
 @media (max-width: 1535px) {
+
     .home .slider-wrapper .slider-item .slider-content,
     .home .slider-controls .slider-pagination {
         width: 85%;
@@ -457,12 +318,13 @@ nav {
 
 
 @media (max-width: 1024px) {
+
     .home .slider-wrapper .slider-item .slider-content,
     .home .slider-controls .slider-pagination {
         width: 100%;
     }
 
-    .home .slider-wrapper .slider-item .slider-content > * {
+    .home .slider-wrapper .slider-item .slider-content>* {
         max-width: 66%;
     }
 
@@ -478,10 +340,11 @@ nav {
 }
 
 @media (max-width: 768px) {
-    .home .slider-wrapper .slider-item .slider-content > * {
+    .home .slider-wrapper .slider-item .slider-content>* {
         max-width: 100%;
     }
 }
+
 /*-------------------------------Cards-Livros---------------------------------------------------------------------------------*/
 .display {
     display: flex;
@@ -921,462 +784,6 @@ button:active {
     }
 }
 
-
-
-/*----------------------------------------------------------Textfield-Index-------------------------------------------Peguei no GPT:)*/
-.container-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 80vh;
-    margin: 15px 0 20px 0;
-    background-color: var(--cor-pricipal);
-}
-
-.container-index-conteudo h1 {
-    text-align: center;
-    color: #333;
-}
-
-.container-index-conteudo {
-    width: 80%;
-}
-
-/* Style for the table */
-.container-index-conteudo table.index-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #fff;
-}
-
-.container-index-conteudo table.index-table th,
-table.index-table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-.container-index-conteudo table.index-table th {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-pricipal);
-}
-
-.container-index-conteudo table.index-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.container-index-conteudo table.index-table tr:hover {
-    background-color: #ddd;
-}
-
-/* Style for buttons and forms */
-.container-index-conteudo input[type="submit"] {
-    background-color: #f44336;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.container-index-conteudo input[type="submit"]:hover {
-    background-color: #d32f2f;
-}
-
-/* Links styling */
-.container-index-conteudo a {
-    text-decoration: none;
-    color: #4CAF50;
-    padding: 8px 16px;
-    border: 1px solid #4CAF50;
-    margin: 5px;
-}
-
-.container-index-conteudo a:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Success message style */
-.container-index-conteudo div {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #e7f3e7;
-    color: green;
-    border: 1px solid #d4eac7;
-    border-radius: 5px;
-}
-
-/*----------------------------------------------------------Textfield-Create-Edit-------------------------------------------Peguei no GPT:)*/
-.container-crete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 80vh;
-    background-color: var(--cor-pricipal);
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-
-.container-create-conteudo {
-    width: 470px;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-font-link);
-    border-radius: 10px;
-    padding: 30px 40px;
-}
-
-.container-create-conteudo h1 {
-    font-size: 36px;
-    color: var(--cor-pricipal);
-    text-align: center;
-}
-
-.container-create-conteudo .textfield {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    background-color: var(--cor-secundaria);
-    margin: 30px 0;
-}
-
-/* Altera todas as inputs e o textarea */
-.container-create-conteudo .textfield input,
-.container-create-conteudo .textfield textarea {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: 2px solid var(--cor-terciaria);
-    border-radius: 40px;
-    font-size: 16px;
-    color: var(--cor-terciaria);
-    padding: 20px 45px 20px 20px;
-    outline: none;
-}
-
-.container-create-conteudo .textfield label {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: var(--cor-terciaria);
-    pointer-events: none;
-    /* Impede que o label interfira com o clique no input */
-    background-color: transparent;
-    padding: 0 5px;
-}
-
-/* Move o label para cima da borda quando o input está em foco ou tem conteúdo */
-.container-create-conteudo .textfield input:focus+label,
-.container-create-conteudo .textfield textarea:focus+label,
-.container-create-conteudo .textfield input:not(:placeholder-shown)+label,
-.container-create-conteudo .textfield textarea:not(:placeholder-shown)+label {
-    top: 0;
-    left: 15px;
-    font-size: 12px;
-    color: var(--cor-terciaria);
-    background-color: var(--cor-secundaria);
-    /* Fundo para cobrir a borda */
-}
-
-.container-create-conteudo .textfield input::placeholder {
-    color: var(--cor-pricipal);
-}
-
-.container-create-conteudo .textfield i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-
-.container-create-conteudo .textfield-botao-submit input {
-    width: 100%;
-    height: 45px;
-    background-color: var(--cor-secundaria);
-    border: none;
-    outline: none;
-    border: 2px solid var(--cor-pricipal);
-    border-radius: 45px;
-    cursor: pointer;
-    font-size: 16px;
-    color: var(--cor-pricipal);
-    font-weight: 600;
-}
-
-.container-create-conteudo .textfield-botao-submit input:hover {
-    transition: .7s;
-    color: var(--cor-terciaria);
-    box-shadow: 0 0 10px var(--cor-terciaria);
-    border: none;
-}
-
-.container-create-conteudo .textfield-link {
-    font-size: 14.5;
-    text-align: center;
-    margin: 20px 0 15px;
-}
-
-.container-create-conteudo .textfield-link p {
-    color: var(--cor-pricipal);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.container-create-conteudo .textfield-link a {
-    color: var(--cor-pricipal);
-    text-decoration: underline;
-    font-weight: 600;
-}
-
-.container-create-conteudo .textfield-link p a:hover {
-    color: var(--cor-terciaria);
-    text-decoration: underline;
-    transition: .7s;
-}
-
-.container-create-conteudo .textfield select {
-    /*Select*/
-    width: 100%;
-    height: 45px;
-    background-color: var(--cor-secundaria);
-    border: none;
-    outline: none;
-    border: 2px solid var(--cor-terciaria);
-    border-radius: 45px;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 0 0 0 15px;
-    color: var(--cor-pricipal);
-}
-
-.container-create-conteudo .textfield select option {
-    background-color: var(--cor-font-link);
-    color: var(--cor-pricipal);
-}
-
-.container-create-conteudo .textfield textarea {
-    /*TextArea*/
-    width: 100%;
-    height: 45px;
-    border-radius: 40px;
-    resize: none;
-    overflow: hidden;
-    padding: 15px;
-    border: none;
-    outline: none;
-    border: 2px solid var(--cor-terciaria);
-
-}
-
-/*----------------------------------------------------------Conta-Table-------------------------------------------Peguei no GPT:)*/
-.conta-table h1 {
-    text-align: center;
-    color: #333;
-}
-
-/* Style for the table */
-.conta-table table.index-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #fff;
-}
-
-.conta-table table.contact-table th,
-table.contact-table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-.conta-table table.contact-table th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.conta-table table.contact-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.conta-table table.contact-table tr:hover {
-    background-color: #ddd;
-}
-
-/* Style for buttons and forms */
-.conta-table input[type="submit"] {
-    background-color: #f44336;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.conta-table input[type="submit"]:hover {
-    background-color: #d32f2f;
-}
-
-/* Links styling */
-.conta-table a {
-    text-decoration: none;
-    color: #4CAF50;
-    padding: 8px 16px;
-    border: 1px solid #4CAF50;
-    margin: 5px;
-}
-
-.conta-table a:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Success message style */
-.conta-table div {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #e7f3e7;
-    color: green;
-    border: 1px solid #d4eac7;
-    border-radius: 5px;
-}
-
-/*-------------------------------Footer---------------------------------------------*/
-footer {
-    width: 100%;
-    color: var(--cor-font-link);
-    border-top: 2px solid var(--cor-secundaria);
-}
-
-.footer-link {
-    text-decoration: none;
-}
-
-#footer_content {
-    background-color: var(--cor-pricipal);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 3rem 3.5rem;
-}
-
-#footer_contacts h1 {
-    margin-bottom: 0.75rem;
-}
-
-#footer_social_media {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
-#footer_social_media .footer-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2.5rem;
-    width: 2.5rem;
-    color: var(--cor-font-link);
-    border-radius: 50px;
-    transition: all 0.7s;
-}
-
-#footer_social_media .footer-link i {
-    font-size: 1.25rem;
-}
-
-#footer_social_media .footer-link:hover {
-    opacity: 0.8;
-}
-
-#instagram {
-    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
-}
-
-#facebook {
-    background: #4267b3;
-}
-
-#whatsapp {
-    background: #25d366;
-}
-
-.footer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    list-style: none;
-}
-
-.footer-list .footer-link {
-    color: var(--cor-font-link);
-}
-
-.footer-list .footer-link:hover {
-    color: var(--cor-terciaria);
-}
-
-#footer_subscribe {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-#footer_subscribe p {
-    color: var(--cor-font-link);
-}
-
-#input_group_footer input {
-    padding: 0.75rem;
-    width: 100%;
-    color: var(--cor-font-link-apagado);
-    border: 1px solid #ccc;
-}
-
-#input_group_footer button {
-    background-color: var(--cor-secundaria);
-    border: none;
-    color: var(--cor-terciaria);
-    padding: 0 1.25rem;
-    font-size: 1.125rem;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    transition: all 0.4s;
-    width: auto;
-}
-
-#input_group_footer button:hover {
-    opacity: 0.8;
-}
-
-#footer_copyright {
-    display: flex;
-    justify-content: center;
-    background-color: var(--cor-font-link);
-    color: var(--cor-pricipal);
-    font-size: 0.9rem;
-    padding: 1.5rem;
-    font-weight: 100;
-}
-
-@media screen and (max-width: 768px) {
-    #footer_content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-}
-
-@media screen and (max-width: 426px) {
-    #footer_content {
-        grid-template-columns: repeat(1, 1fr);
-        padding: 3rem 2rem;
-    }
-}
-
 /*--------------------------------ADIMINISTRADOR------------------------------------------------------*/
 .header-admin {
     width: 100%;
@@ -1449,190 +856,3 @@ footer {
     background-color: var(--cor-font-link);
     transition: 0.8s;
 }
-
-/*----------------------------------------------------------Textfield-Create-Edit-------------------------------------------Peguei no GPT:)*/
-.container-create {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 80vh;
-    background-color: var(--cor-pricipal);
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-
-.container-create-conteudo {
-    width: 470px;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-font-link);
-    border-radius: 10px;
-    padding: 30px 40px;
-}
-
-.container-create-conteudo h1 {
-    font-size: 36px;
-    color: var(--cor-pricipal);
-    text-align: center;
-}
-
-.container-create-conteudo .textfield {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    background-color: var(--cor-secundaria);
-    margin: 30px 0;
-}
-
-/* Altera todas as inputs e o textarea */
-.container-create-conteudo .textfield input,
-.container-create-conteudo .textfield textarea {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: 2px solid var(--cor-terciaria);
-    border-radius: 40px;
-    font-size: 16px;
-    color: var(--cor-principal);
-    padding: 20px 45px 20px 20px;
-    outline: none;
-}
-
-.container-create-conteudo .textfield label {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: var(--cor-terciaria);
-    pointer-events: none;
-    /* Impede que o label interfira com o clique no input */
-    background-color: transparent;
-    padding: 0 5px;
-}
-
-/* Move o label para cima da borda quando o input está em foco ou tem conteúdo */
-.container-create-conteudo .textfield input:focus+label,
-.container-create-conteudo .textfield textarea:focus+label,
-.container-create-conteudo .textfield input:not(:placeholder-shown)+label,
-.container-create-conteudo .textfield textarea:not(:placeholder-shown)+label {
-    top: 0;
-    left: 15px;
-    font-size: 12px;
-    color: var(--cor-terciaria);
-    background-color: var(--cor-secundaria);
-    /* Fundo para cobrir a borda */
-}
-
-.container-create-conteudo .textfield input::placeholder {
-    color: var(--cor-pricipal);
-}
-
-.container-create-conteudo .textfield i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-
-.container-create-conteudo .textfield-botao-submit input {
-    width: 100%;
-    height: 45px;
-    background-color: var(--cor-secundaria);
-    border: none;
-    outline: none;
-    border: 2px solid var(--cor-pricipal);
-    border-radius: 45px;
-    cursor: pointer;
-    font-size: 16px;
-    color: var(--cor-pricipal);
-    font-weight: 600;
-}
-
-.container-create-conteudo .textfield-botao-submit input:hover {
-    transition: .7s;
-    color: var(--cor-terciaria);
-    box-shadow: 0 0 10px var(--cor-terciaria);
-    border: none;
-}
-
-.container-create-conteudo .textfield-link {
-    font-size: 14.5;
-    text-align: center;
-    margin: 20px 0 15px;
-}
-
-.container-create-conteudo .textfield-link p {
-    color: var(--cor-pricipal);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.container-create-conteudo .textfield-link a {
-    color: var(--cor-pricipal);
-    text-decoration: underline;
-    font-weight: 600;
-}
-
-.container-create-conteudo .textfield-link p a:hover {
-    color: var(--cor-terciaria);
-    text-decoration: underline;
-    transition: .7s;
-}
-
-.container-create-conteudo .textfield select {
-    /*Select*/
-    width: 100%;
-    height: 45px;
-    background-color: var(--cor-secundaria);
-    border: none;
-    outline: none;
-    border: 2px solid var(--cor-terciaria);
-    border-radius: 45px;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 0 0 0 15px;
-    color: var(--cor-pricipal);
-}
-
-.container-create-conteudo .textfield select option {
-    background-color: var(--cor-font-link);
-    color: var(--cor-pricipal);
-}
-
-.container-create-conteudo .textfield textarea {
-    /*TextArea*/
-    width: 100%;
-    height: 45px;
-    border-radius: 40px;
-    resize: none;
-    overflow: hidden;
-    padding: 15px;
-    border: none;
-    outline: none;
-    border: 2px solid var(--cor-terciaria);
-
-}
-
-.container-create-conteudo .textfield-file {
-    color: var(--cor-pricipal);
-    border-bottom: 2px solid var(--cor-terciaria);
-}
-
-.container-create-conteudo .textfield input {
-    color: var(--cor-pricipal);
-}
-
-.container-create-conteudo fieldset {
-    margin: 15px 0;
-    border: 2px solid var(--cor-terciaria);
-    border-radius: 5px;
-    padding: 15px;
-}
-
-.container-create-conteudo legend {
-    color: var(--cor-terciaria);
-}
-
-/*----------------------------------------------------------Conta-Table-------------------------------------------Peguei no GPT:)*/

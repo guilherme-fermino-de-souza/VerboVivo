@@ -1,18 +1,21 @@
-@extends ('templates.template')
+@extends ('content.livros.template.layout')
+
 @section('content')
-<h1>Livros</h1>
-<div>
-    @if(session()->has('success'))
-    <div>
-        {{session('success')}}
+<div class="content">
+
+    <h1 class="titulo">Livros</h1>
+    <div class="botao-container">
+        <a class="botao-criar" href="{{ route('livro.create') }}">Criar Livro</a>
     </div>
-    @endif
-</div>
-<div>
+
     <div>
-        <a href="{{route('livro.create')}}">Create Livro</a>
-        <a href="{{route('welcome')}}">Home</a>
+        @if(session()->has('success'))
+        <div class="alerta-sucesso">
+            {{ session('success') }}
+        </div>
+        @endif
     </div>
+
     <div class="container-index">
         <div class="container-index-conteudo">
             <table class="index-table">
@@ -67,18 +70,25 @@
                         </div>
                     </td>
                     <td>
-                        <a href="{{route('livro.edit', ['livro' => $livro])}}">Edit</a>
+                        <a class="btn-editar" href="{{route('livro.edit', ['livro' => $livro])}}">Editar</a>
                     </td>
                     <td>
                         <form method="post" action="{{route('livro.destroy', ['livro' => $livro])}}">
                             @csrf
                             @method('delete')
-                            <input type="submit" value="Delete">
+                            <input class="btn-deletar" type="submit" value="Deletar">
                         </form>
                     </td>
                 </tr>
                 @endforeach
             </table>
+
+            <!-- Links de paginação -->
+            <div class="paginacao">
+                {{ $livros->links() }}
+            </div>
         </div>
     </div>
-    @endsection
+</div>
+
+@endsection

@@ -1,4 +1,5 @@
-@extends ('templates.template')
+@extends ('content.categorias.template.layout')
+
 @section('content')
 <div class="container-create">
     <div class="container-create-conteudo">
@@ -17,12 +18,11 @@
             @method('put')
             <div class="textfield">
                 <input type="text" id="categoria" name="categoria" value="{{$categoria->categoria}}" required>
+                <label for="categoria">Nome da categoria</label>
             </div>
 
             <div class="textfield-botao">
-                <div class="textfield-botao-submit">
-                    <input type="submit" value="Atualizar Categoria" />
-                </div>
+                <input class="btn-salvar" type="submit" value="Salvar categoria" />
             </div>
         </form>
     </div>

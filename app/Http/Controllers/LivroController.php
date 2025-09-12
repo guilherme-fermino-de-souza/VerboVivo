@@ -11,15 +11,15 @@ class LivroController extends Controller
 {
     public function index()
     {
-        $livros = Livro::all();
+        $livros = Livro::paginate(10);
         $categorias = Categoria::all();
 
-        return view('livros.index', compact('livros', 'categorias'));
+        return view('content.livros.index', compact('livros', 'categorias'));
     }
     public function create()
     {
         $categorias = Categoria::all();
-        return view('livros.create', compact('categorias'));
+        return view('content.livros.create', compact('categorias'));
     }
 
     public function store(Request $request)
@@ -60,12 +60,12 @@ class LivroController extends Controller
             $livro->categorias()->attach($request->categorias);
         }
 
-        return redirect()->route('livro.index');
+        return redirect()->route('content.livros.index');
     }
 
     public function edit(Livro $livro)
     {
-        return view('livro.edit', ['livro' => $livro]);
+        return view('content.livros.edit', ['livro' => $livro]);
     }
 
     public function update(Livro $livro, Request $request)
@@ -113,12 +113,12 @@ class LivroController extends Controller
             $livro->categorias()->sync($request->categorias); // use sync para não duplicar
         }
 
-        return redirect()->route('livro.index')->with('success', 'Livro atualizado com sucesso');
+        return redirect()->route('content.livros.index')->with('success', 'Livro atualizado com sucesso');
     }
 
     public function destroy(Livro $livro)
     { //Exclude
         $livro->delete();
-        return redirect()->route('livro.index')->with('success', 'Livro deletado com sucesso');
+        return redirect()->route('content.livros.index')->with('success', 'Livro deletado com sucesso');
     }
 }

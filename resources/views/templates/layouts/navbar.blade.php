@@ -34,13 +34,16 @@
             </li>
             <li class="subnav-maisvendidos"><a href="#">Mais Vendidos</a></li>
         </ul>
-        @can('visualizar-admin')
-            <ul class="admin-subnav">
-                    <li><a href="{{route('livro.index')}}">Livros</a></li>
-                    <li><a href="{{route('livro.create')}}">Livro</a></li>
-                    <li><a href="{{route('categoria.index')}}">Categorias</a></li>
-                    <li><a href="{{route('categoria.create')}}">Categoria</a></li>
-            </ul>
-        @endcan
     </div>
+
+    @can('visualizar-admin')
+    <div class="admin-part">
+        <ul class="admin-subnav">
+            <li><a href="{{route('categoria.index')}}">Categorias</a></li>
+            <li><a href="{{route('contato.index')}}">Contatos</a></li>
+            <li><a href="{{route('livro.index')}}">Livros</a></li>
+        </ul>
+    </div>
+
+    @endcan
 </div>

@@ -12,14 +12,15 @@ class ContatoController extends Controller
 
     public function index()
     {
-        $contatos = Contato::all();
+        $contatos = Contato::paginate(10);
 
-        return view('contatos.index', ['contatos' => $contatos]); //View pega DATA do CONTROLLER
+        return view('content.contatos.index', ['contatos' => $contatos]); //View pega DATA do CONTROLLER
     }
 
     public function create()
     {
-        return view('contatos.create');
+        return view('content.contatos.create');
+
     }
 
     public function store(Request $request)
@@ -45,7 +46,7 @@ class ContatoController extends Controller
 
     public function edit(Contato $contato)
     {
-        return view('contatos.edit', ['contato' => $contato]);
+        return view('content.contatos.edit', ['contato' => $contato]);
     }
 
     public function update(Contato $contato, Request $request)
@@ -67,12 +68,12 @@ class ContatoController extends Controller
             'texto' => $request->texto,
         ]);
 
-        return redirect(route('contato.index'))->with('success', 'Contato atualizado com sucesso');
+        return redirect(route('content.contato.index'))->with('success', 'Contato atualizado com sucesso');
     }
 
     public function destroy(Contato $contato)
     {
         $contato->delete();
-        return redirect(route('contato.index'))->with('success', 'Contato apagado conm sucesso');
+        return redirect(route('content.contato.index'))->with('success', 'Contato apagado conm sucesso');
     }
 }

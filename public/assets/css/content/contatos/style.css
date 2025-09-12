@@ -1,0 +1,218 @@
+/* Reset básico e variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --cor-tema: #3B3F8C;
+    --cor-secundaria: #D9A404;
+    --cor-fundo: #262626;
+    --cor-branco: #D0D6D9;
+    --cor-preto: #000000;
+    --cor-vermelho: #F22222;
+
+    --preto: #0D0D0D;
+    --cinza: #404040;
+    --branco: #F2F2F2;
+    --branco-light: #ccc;;
+    --azul: #1d3e55;
+    --verde: #03A64A;
+    --vermelho: #F26D6D;
+}
+
+.content {
+    width: 80%;
+    margin: auto;
+}
+
+.titulo {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.botao-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.botao-criar {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--cor-tema);
+    color: var(--branco);
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.botao-criar:hover {
+    background-color: var(--azul);
+}
+
+.alerta-sucesso {
+    padding: 10px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.index-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.index-table th,
+.index-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.index-table th {
+    background-color: var(--cor-fundo);
+    color: var(--branco);
+}
+
+.btn-editar {
+    padding: 6px 12px;
+    background-color: var(--cor-tema);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: var(--azul);
+}
+
+.btn-deletar {
+    padding: 6px 12px;
+    background-color: var(--cor-vermelho);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-deletar:hover {
+    background-color: #c0392b;
+}
+
+.paginacao {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.paginacao nav {
+    display: inline-block;
+}
+
+/* Paginação ---------------------------------------------------------------------------------------------------*/
+.paginacao nav {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.paginacao .pagination {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.paginacao .pagination li {
+    display: inline-block;
+}
+
+.paginacao .pagination li a,
+.paginacao .pagination li span {
+    padding: 8px 14px;
+    border: 1px solid var(--cor-tema);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--cor-tema);
+    transition: 0.3s;
+    width: 20px;
+}
+
+.paginacao .pagination li a:hover {
+    background-color: var(--cor-tema);
+    color: var(--branco);
+}
+
+.paginacao .pagination .active span {
+    background-color: var(--cor-tema);
+    color: var(--branco);
+    border-color: var(--cor-tema);
+}
+
+/* Create ---------------------------------------------------------------------------------------------------*/
+.container-create {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.container-create-conteudo {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.container-create-conteudo h1 {
+    margin: 1rem  0;
+}
+
+.textfield {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.textfield input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--branco-light);
+    border-radius: 6px;
+}
+
+.textfield label {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: var(--branco);
+    padding: 0 4px;
+    font-size: 14px;
+    color: #555;
+}
+
+.btn-salvar {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-tema);
+    color: var(--branco);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-salvar:hover {
+    background-color: var(--azul);
+}
