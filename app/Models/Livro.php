@@ -9,6 +9,8 @@ class Livro extends Model
 {
     use HasFactory;
 
+    protected $table = "livros";
+
     protected $fillable = [
         'titulo',
         'descricao',
@@ -18,8 +20,7 @@ class Livro extends Model
         'anolancamento',
         'preco',
         'quantidade',
-        'name',
-        'size',
+        'image',
     ];
 
     public function categorias()

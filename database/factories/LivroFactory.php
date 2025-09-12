@@ -22,11 +22,10 @@ class LivroFactory extends Factory
             'autor' => fake()->name(),
             'idioma' => fake()->randomElement(['Alemão', 'Espanhol', 'Francês', 'Inglês', 'Português']),
             'paisorigem' => fake()->country(),
-            'anolancamento' => fake()->dateTimeBetween('-750 years'),
+            'anolancamento' => fake()->random_int(2, 2100),
             'preco' => fake()->randomFloat(2, 10, 750),
             'quantidade' => fake()->numberBetween(10, 2000),
-            'name' => fake()->word() . '.jpg',
-            'size' => fake()->numberBetween(50000, 5000000),
+            'image' => fake()->word(),
         ];
     }
 }

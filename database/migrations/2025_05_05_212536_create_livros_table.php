@@ -18,11 +18,10 @@ return new class extends Migration
             $table->string('autor');
             $table->string('idioma');
             $table->string('paisorigem');
-            $table->date('anolancamento');
+            $table->integer('anolancamento');
             $table->decimal('preco', 8, 2);
             $table->integer('quantidade');
-            $table->string('name'); //Img
-            $table->string('size');
+            $table->string('image')->nullable(); //Img
             $table->timestamps();
         });
     }

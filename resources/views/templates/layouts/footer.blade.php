@@ -67,6 +67,6 @@
 
         <div id="footer_copyright">
                 &#169
-                2025 all rights reserved
+                2025 todos os direitos reservados
         </div>
 </footer>

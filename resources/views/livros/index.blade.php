@@ -51,9 +51,9 @@
                     </td>
                     <td>
                         <div class="index.conteudo-livro-image">
-                            @if (!empty($livro->name))
+                            @if (!empty($livro->image))
                             {{-- Se tiver imagem cadastrada --}}
-                            <img src="{{ asset('Images/livros/' . $livro->name) }}"
+                            <img src="{{ asset('storage/' . $livro->image) }}"
                                 alt="Imagem do livro"
                                 height="100"
                                 width="100">

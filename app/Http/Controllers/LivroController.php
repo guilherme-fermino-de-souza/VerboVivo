@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use App\Models\Livro;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LivroController extends Controller
 {
@@ -12,12 +13,13 @@ class LivroController extends Controller
     {
         $livros = Livro::all();
         $categorias = Categoria::all();
-        return view('livros.index', ['livros' => $livros, 'categorias' => $categorias]);
+
+        return view('livros.index', compact('livros', 'categorias'));
     }
     public function create()
     {
         $categorias = Categoria::all();
-        return view('livros.create', ['categorias' => $categorias]);
+        return view('livros.create', compact('categorias'));
     }
 
     public function store(Request $request)
@@ -28,23 +30,19 @@ class LivroController extends Controller
             'autor' => 'required|string|max:255',
             'idioma' => 'required|string|max:255',
             'paisorigem' => 'required|string|max:255',
-            'anolancamento' => 'nullable|date',
-            'preco' => 'required|decimal:2',
+            'anolancamento' => 'integer|min:500|max:' . date('Y'),
+            'preco' => 'required|numeric|min:0',
             'quantidade' => 'required|numeric',
-            'image' => 'nullable|image|max:2048', // até 2MB
-            'size' => 'nullable|image|max:2048', // até 2MB
+            'image' => 'nullable|image|mimes:png,jpg,gif|max:2048', // até 2MB
         ]);
 
-        $image = $request->file('image');
-
-        $name = $image ? $image->getClientOriginalName() : null;
-        $size = $image ? $image->getSize() : null;
-
-        if ($image) {
-            $image->storeAs('public/Images/livros', $name);
+        $image = null;
+        if ($request->hasFile('image')) {
+            //$image = $request->file('image')->store(options: 'public/images/livros');
+            $image = Storage::disk('public')->put('/images/livros', $request->file('image'));
         }
 
-        $livro = new Livro([
+        $livro = Livro::create([
             'titulo' => $request->titulo,
             'descricao' => $request->descricao,
             'autor' => $request->autor,
@@ -53,8 +51,7 @@ class LivroController extends Controller
             'anolancamento' => $request->anolancamento,
             'preco' => $request->preco,
             'quantidade' => $request->quantidade,
-            'name' => $name,
-            'size' => $size,
+            'image' => $image,
         ]);
 
         $livro->save();
@@ -63,12 +60,12 @@ class LivroController extends Controller
             $livro->categorias()->attach($request->categorias);
         }
 
-        return redirect()->route('livros.index');
+        return redirect()->route('livro.index');
     }
 
     public function edit(Livro $livro)
     {
-        return view('livros.edit', ['livro' => $livro]);
+        return view('livro.edit', ['livro' => $livro]);
     }
 
     public function update(Livro $livro, Request $request)
@@ -116,12 +113,12 @@ class LivroController extends Controller
             $livro->categorias()->sync($request->categorias); // use sync para não duplicar
         }
 
-        return redirect(route('livros.index'))->with('success', 'Livro atualizado com sucesso');
+        return redirect()->route('livro.index')->with('success', 'Livro atualizado com sucesso');
     }
 
     public function destroy(Livro $livro)
     { //Exclude
         $livro->delete();
-        return redirect(route('livros.index'))->with('success', 'Livro deletado com sucesso');
+        return redirect()->route('livro.index')->with('success', 'Livro deletado com sucesso');
     }
 }

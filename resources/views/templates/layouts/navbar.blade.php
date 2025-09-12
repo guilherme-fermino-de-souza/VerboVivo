@@ -36,7 +36,7 @@
         </ul>
         @can('visualizar-admin')
             <ul class="admin-subnav">
-                    <li><a href="{{route('livros.index')}}">Livros</a></li>
+                    <li><a href="{{route('livro.index')}}">Livros</a></li>
                     <li><a href="{{route('livro.create')}}">Livro</a></li>
                     <li><a href="{{route('categoria.index')}}">Categorias</a></li>
                     <li><a href="{{route('categoria.create')}}">Categoria</a></li>

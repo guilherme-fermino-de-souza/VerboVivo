@@ -24,22 +24,21 @@ Route::get('/dashboard', function () {
 
 Route::resource("/consumidor", ConsumidorController::class)->names("consumidor");
 
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome'); //Página Principal
+
 //Consumidor
 Route::middleware('auth')->group(function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('welcome'); //Página Principal
-
     Route::get('/carousel', function () {
         return view('templates.carousel');
-
     })->name('carousel'); //Página Principal 
 
     Route::get('/cardshome', function () {
         return view('templates.cardshome');
     })->name('cardshome'); //Página Principal 
-    
+
     Route::get('/cardstatik', function () {
         return view('templates.cardstatik');
     })->name('cardstatik'); //Página Principal 
@@ -48,12 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('contato', ContatoController::class)->names('contato');
 
     //Livro
-    Route::get('/livros', [LivroController::class, 'index'])->name('livros.index'); //Livros Protótipo
-    Route::get('/livros/create', [LivroController::class, 'create'])->name('livro.create'); //Livros Protótipo
-    Route::post('/livros', [LivroController::class, 'store'])->name('livro.store'); //Livros Protótipo
-    Route::get('/livros/{livro}/edit', [LivroController::class, 'edit'])->name('livro.edit');
-    Route::put('/livros/{livro}/update', [LivroController::class, 'update'])->name('livro.update'); //"put" for update
-    Route::delete('/livros/{livro}/destroy', [LivroController::class, 'destroy'])->name('livro.destroy'); //"put" for update
+    Route::resource('livro', LivroController::class)->names('livro');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
