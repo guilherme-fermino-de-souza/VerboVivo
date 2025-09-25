@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('anolancamento');
             $table->decimal('preco', 8, 2);
             $table->integer('quantidade');
+            $table->string('tipo_image');
             $table->string('image')->nullable(); //Img
             $table->timestamps();
         });

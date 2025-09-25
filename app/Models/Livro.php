@@ -20,6 +20,7 @@ class Livro extends Model
         'anolancamento',
         'preco',
         'quantidade',
+        'tipo_image',
         'image',
     ];
 

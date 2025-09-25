@@ -25,6 +25,7 @@ class LivroFactory extends Factory
             'anolancamento' => fake()->random_int(2, 2100),
             'preco' => fake()->randomFloat(2, 10, 750),
             'quantidade' => fake()->numberBetween(10, 2000),
+            'tipo_image' => fake()->word(),
             'image' => fake()->word(),
         ];
     }

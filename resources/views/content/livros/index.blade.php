@@ -56,15 +56,19 @@
                         <div class="index.conteudo-livro-image">
                             @if (!empty($livro->image))
                             {{-- Se tiver imagem cadastrada --}}
+                            @if ($livro->tipo_image === 'public')
+                            <img src="{{ asset($livro->image) }}" 
+                                alt="Capa"         
+                                width="100">
+                            @else
                             <img src="{{ asset('storage/' . $livro->image) }}"
                                 alt="Imagem do livro"
-                                height="100"
                                 width="100">
+                            @endif
                             @else
                             {{-- Se não tiver imagem cadastrada --}}
                             <img src="{{ asset('Images/livros/book-cover-default.jpg') }}"
                                 alt="Imagem padrão"
-                                height="100"
                                 width="100">
                             @endif
                         </div>

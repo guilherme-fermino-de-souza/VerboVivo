@@ -26,6 +26,8 @@ class LivroSeeder extends Seeder
                 'preco' => 45.90,
                 'quantidade' => 300,
                 'categorias' => ['Clássicos da Literatura', 'Romance Contemporâneo', 'Psicologia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-01.jpg'
             ],
             [
                 'titulo' => 'Memórias Póstumas de Brás Cubas',
@@ -37,6 +39,8 @@ class LivroSeeder extends Seeder
                 'preco' => 49.90,
                 'quantidade' => 250,
                 'categorias' => ['Clássicos da Literatura', 'Filosofia', 'Psicologia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-02.jpg'
             ],
             [
                 'titulo' => 'O Guarani',
@@ -48,6 +52,8 @@ class LivroSeeder extends Seeder
                 'preco' => 39.90,
                 'quantidade' => 180,
                 'categorias' => ['Romance Histórico', 'Clássicos da Literatura', 'Contos de Fadas e Folclore'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-03.jpg'
             ],
             [
                 'titulo' => 'Iracema',
@@ -59,6 +65,8 @@ class LivroSeeder extends Seeder
                 'preco' => 34.90,
                 'quantidade' => 220,
                 'categorias' => ['Romance Histórico', 'Clássicos da Literatura', 'Contos de Fadas e Folclore'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-04.jpg'
             ],
             [
                 'titulo' => 'A Hora da Estrela',
@@ -70,6 +78,8 @@ class LivroSeeder extends Seeder
                 'preco' => 42.00,
                 'quantidade' => 150,
                 'categorias' => ['Romance Contemporâneo', 'Psicologia', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-05.jpg'
             ],
             [
                 'titulo' => 'Laços de Família',
@@ -81,6 +91,8 @@ class LivroSeeder extends Seeder
                 'preco' => 38.00,
                 'quantidade' => 200,
                 'categorias' => ['Contos e Crônicas', 'Psicologia', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-06.jpg'
             ],
             [
                 'titulo' => 'Grande Sertão: Veredas',
@@ -92,6 +104,8 @@ class LivroSeeder extends Seeder
                 'preco' => 59.90,
                 'quantidade' => 100,
                 'categorias' => ['Clássicos da Literatura', 'Romance Histórico', 'Filosofia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-07.jpg'
             ],
             [
                 'titulo' => 'Sagarana',
@@ -103,6 +117,8 @@ class LivroSeeder extends Seeder
                 'preco' => 44.90,
                 'quantidade' => 120,
                 'categorias' => ['Contos e Crônicas', 'Clássicos da Literatura', 'Romance Histórico'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-08.jpg'
             ],
             [
                 'titulo' => 'Capitães da Areia',
@@ -114,6 +130,8 @@ class LivroSeeder extends Seeder
                 'preco' => 39.90,
                 'quantidade' => 400,
                 'categorias' => ['Romance Contemporâneo', 'Política e Sociedade', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-09.jpg'
             ],
             [
                 'titulo' => 'Gabriela, Cravo e Canela',
@@ -125,6 +143,8 @@ class LivroSeeder extends Seeder
                 'preco' => 52.00,
                 'quantidade' => 220,
                 'categorias' => ['Romance Contemporâneo', 'Política e Sociedade', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-10.jpg'
             ],
             [
                 'titulo' => 'Mar Morto',
@@ -136,6 +156,8 @@ class LivroSeeder extends Seeder
                 'preco' => 37.00,
                 'quantidade' => 140,
                 'categorias' => ['Romance Contemporâneo', 'Clássicos da Literatura', 'Poesia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-11.jpg'
             ],
             [
                 'titulo' => 'Menino de Engenho',
@@ -147,6 +169,8 @@ class LivroSeeder extends Seeder
                 'preco' => 33.90,
                 'quantidade' => 160,
                 'categorias' => ['Clássicos da Literatura', 'Romance Histórico', 'Educação e Pedagogia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-12.jpg'
             ],
             [
                 'titulo' => 'Vidas Secas',
@@ -158,6 +182,8 @@ class LivroSeeder extends Seeder
                 'preco' => 41.90,
                 'quantidade' => 210,
                 'categorias' => ['Clássicos da Literatura', 'Política e Sociedade', 'Romance Histórico'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-13.jpg'
             ],
             [
                 'titulo' => 'São Bernardo',
@@ -169,6 +195,8 @@ class LivroSeeder extends Seeder
                 'preco' => 36.90,
                 'quantidade' => 130,
                 'categorias' => ['Clássicos da Literatura', 'Romance Contemporâneo', 'Psicologia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-14.jpg'
             ],
             [
                 'titulo' => 'O Quinze',
@@ -180,6 +208,8 @@ class LivroSeeder extends Seeder
                 'preco' => 29.90,
                 'quantidade' => 150,
                 'categorias' => ['Romance Histórico', 'Clássicos da Literatura', 'Política e Sociedade'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-15.jpg'
             ],
             [
                 'titulo' => 'As Três Marias',
@@ -191,6 +221,8 @@ class LivroSeeder extends Seeder
                 'preco' => 35.90,
                 'quantidade' => 90,
                 'categorias' => ['Romance Contemporâneo', 'Psicologia', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-16.jpg'
             ],
             [
                 'titulo' => 'O Tempo e o Vento',
@@ -202,6 +234,8 @@ class LivroSeeder extends Seeder
                 'preco' => 65.00,
                 'quantidade' => 200,
                 'categorias' => ['Romance Histórico', 'Clássicos da Literatura', 'Política e Sociedade'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-17.jpeg'
             ],
             [
                 'titulo' => 'Incidente em Antares',
@@ -213,6 +247,8 @@ class LivroSeeder extends Seeder
                 'preco' => 46.00,
                 'quantidade' => 160,
                 'categorias' => ['Romance Contemporâneo', 'Política e Sociedade', 'Fantasia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-18.jpeg'
             ],
             [
                 'titulo' => 'Macunaíma',
@@ -224,6 +260,8 @@ class LivroSeeder extends Seeder
                 'preco' => 39.90,
                 'quantidade' => 300,
                 'categorias' => ['Clássicos da Literatura', 'Contos de Fadas e Folclore', 'Política e Sociedade'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-19.jpg'
             ],
             [
                 'titulo' => 'Pauliceia Desvairada',
@@ -235,6 +273,8 @@ class LivroSeeder extends Seeder
                 'preco' => 28.90,
                 'quantidade' => 80,
                 'categorias' => ['Poesia', 'Clássicos da Literatura', 'Arte, Fotografia e Design'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-20.jpg'
             ],
             [
                 'titulo' => 'Alguma Poesia',
@@ -246,6 +286,8 @@ class LivroSeeder extends Seeder
                 'preco' => 31.90,
                 'quantidade' => 110,
                 'categorias' => ['Poesia', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-21.jpeg'
             ],
             [
                 'titulo' => 'Claro Enigma',
@@ -257,6 +299,8 @@ class LivroSeeder extends Seeder
                 'preco' => 36.00,
                 'quantidade' => 90,
                 'categorias' => ['Poesia', 'Filosofia', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-22.jpeg'
             ],
             [
                 'titulo' => 'Antologia Poética',
@@ -268,6 +312,8 @@ class LivroSeeder extends Seeder
                 'preco' => 40.00,
                 'quantidade' => 100,
                 'categorias' => ['Poesia', 'Romance Contemporâneo', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-23.jpeg'
             ],
             [
                 'titulo' => 'Poemas Escolhidos',
@@ -279,6 +325,8 @@ class LivroSeeder extends Seeder
                 'preco' => 34.00,
                 'quantidade' => 70,
                 'categorias' => ['Poesia', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-24.jpeg'
             ],
             [
                 'titulo' => 'O Alienista',
@@ -290,6 +338,8 @@ class LivroSeeder extends Seeder
                 'preco' => 29.90,
                 'quantidade' => 200,
                 'categorias' => ['Clássicos da Literatura', 'Psicologia', 'Filosofia'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-25.jpeg'
             ],
             [
                 'titulo' => 'A Moreninha',
@@ -301,6 +351,8 @@ class LivroSeeder extends Seeder
                 'preco' => 32.90,
                 'quantidade' => 150,
                 'categorias' => ['Romance Histórico', 'Romance Contemporâneo', 'Clássicos da Literatura'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-26.jpeg'
             ],
             [
                 'titulo' => 'O Primo Basílio',
@@ -312,6 +364,8 @@ class LivroSeeder extends Seeder
                 'preco' => 43.90,
                 'quantidade' => 120,
                 'categorias' => ['Clássicos da Literatura', 'Romance Contemporâneo'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-27.jpg'
             ],
             [
                 'titulo' => 'Os Maias',
@@ -323,6 +377,8 @@ class LivroSeeder extends Seeder
                 'preco' => 48.90,
                 'quantidade' => 140,
                 'categorias' => ['Clássicos da Literatura', 'Romance Histórico', 'Política e Sociedade'],
+                'tipo_image' => 'public',
+                'image' => 'Images/livros/livro-28.jpg'
             ],
         ];
 
