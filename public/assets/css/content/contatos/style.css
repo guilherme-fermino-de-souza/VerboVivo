@@ -167,9 +167,9 @@
 
 .container-create-conteudo {
     background: var(--branco);
-    padding: 30px;
-    border-radius: 12px;
-    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    width: 400px;
     max-width: 400px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
     margin: 2rem 0;
@@ -177,17 +177,20 @@
 }
 
 .container-create-conteudo h1 {
-    margin: 1rem  0;
+    margin: 0;
+    margin-bottom: 2rem;
 }
 
 .textfield {
     position: relative;
+    margin: auto;
+    padding: 5px;
     margin-bottom: 20px;
+    width: 300px;
+    height: 55px;
 }
 
-.textfield input {
-    width: 100%;
-    padding: 12px;
+.textfield input {    
     border: 1px solid var(--branco-light);
     border-radius: 6px;
 }
@@ -202,6 +205,10 @@
     color: #555;
 }
 
+.textfield textarea {
+    resize: none;
+
+}
 .btn-salvar {
     width: 100%;
     padding: 12px;

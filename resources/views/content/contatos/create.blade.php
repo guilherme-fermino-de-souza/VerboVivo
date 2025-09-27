@@ -11,8 +11,7 @@
             </div>
 
             <div class="textfield">
-                <textarea id="texto" name="texto" rows="3" required
-                   style="width: 100%; max-width: 100%; max-width: 90%; min-height: 50%; max-height: 100px;"></textarea>
+                <textarea id="texto" name="texto" required maxlength="500"></textarea>
                 <label for="texto">Digite sua mensagem</label>
             </div>
 
