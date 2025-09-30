@@ -196,10 +196,11 @@
     position: absolute;
     top: -10px;
     left: 12px;
+    border-radius: 4px;
     background: var(--branco);
     padding: 0 4px;
     font-size: 14px;
-    color: #555;
+    color: var(--preto);
 }
 
 .btn-salvar {
@@ -260,10 +261,13 @@ fieldset label {
 .textfield-file input[type=file] {
     display: block;
     padding: 10px;
-    border: 1px dashed #aaa;
+    outline: none;
+    border: 1px solid var(--branco-light);
     border-radius: 8px;
-    background: #f9f9f9;
+    background: #ffffff;
+    color: var(--preto);
     cursor: pointer;
+    margin: auto;
     max-width: 500px;
 }
 
