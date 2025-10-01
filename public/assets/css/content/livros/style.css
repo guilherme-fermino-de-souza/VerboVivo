@@ -286,3 +286,54 @@ fieldset legend {
 fieldset label {
     margin-right: 15px;
 }
+
+.fieldCheckbox {
+    max-width: 28rem;
+    padding: 0.75rem;
+    border: 1px solid var(--branco-light);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.checkboxContainer{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 16px;
+    margin-top: 0.75rem;
+    color: var(--cor-preto);
+}
+
+.checkboxInput {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.5rem;
+    height: 1.4rem;
+    border: 2px solid var(--preto);
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.checkboxInput:checked {
+  background-color: var(--azul);
+  border-color: var(--azul);
+}
+
+.checkboxInput:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--branco);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkboxContainer label {
+    cursor: pointer;
+    user-select: none;
+}
