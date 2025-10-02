@@ -2,8 +2,10 @@
 
 @section('content')
 <div class="container-create">
-    <div class="container-create-conteudo">
+    <div class="container-titulo">
         <h1>Create Livro</h1>
+    </div>
+    <div class="container-create-conteudo">
         <form method="post" action="{{route('livro.store')}}" enctype="multipart/form-data">
             @csrf
             @method('post')
