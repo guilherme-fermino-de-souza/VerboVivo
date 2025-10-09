@@ -58,12 +58,18 @@ class CategoriaController extends Controller
 
         $categoria->update($data);
 
-        return redirect(route('content.categoria.index'))->with('sucess', 'Categoria Updated Suceffully');
+        return redirect(route('categoria.index'))->with('sucess', 'Categoria Updated Suceffully');
     }
 
     public function destroy(Categoria $categoria)
     {
+        // Desassocia todos os livros da categoria
+        $categoria->livros()->detach();
+
+        // Agora pode deletar a categoria
         $categoria->delete();
-        return redirect(route('content.categoria.index'))->with('success', 'Categoria Deleted Suceffully ');
+
+        return redirect()->route('categoria.index')
+            ->with('success', 'Categoria deletada com sucesso!');
     }
 }

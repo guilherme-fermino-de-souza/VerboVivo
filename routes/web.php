@@ -59,12 +59,12 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
         ->name('admin.create');
 
     //Store
-    Route::get('/admin/store', [AdminController::class, 'store'])
+    Route::post('/admin/store', [AdminController::class, 'store'])
         ->middleware('auth')
         ->name('admin.store');
 
     //Destroy
-    Route::get('/admin/destroy', [AdminController::class, 'destroy'])
+    Route::delete('/admin/{id}/destroy', [AdminController::class, 'destroy'])
         ->middleware('auth')
         ->name('admin.destroy');
 

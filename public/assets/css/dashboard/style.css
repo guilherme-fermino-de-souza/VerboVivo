@@ -2,7 +2,7 @@
     --cor-tema: #3B3F8C;
     --cor-tema-apagado: #4449a1;
     --cor-fundo: #262626;
-    --branco: #D0D6D9;
+    --cor-branco: #D0D6D9;
     --cor-preto: #000000;
     --cor-vermelho: #F22222;
 
@@ -21,7 +21,7 @@
 
 /* ==================== GERAL ==================== */
 .dashboard-root {
-    background-color: var(--cor-fundo);
+    background-color: var(--branco);
     color: var(--branco);
     min-height: 100vh;
     padding: 40px 60px;
@@ -42,13 +42,11 @@
     gap: 10px;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--branco);
+    color: var(--preto);
 }
 
-.dashboard-title img {
-    width: 40px;
-    height: 40px;
-    filter: brightness(0) invert(1);
+.dashboard-title span {
+    font-size: 3rem;
 }
 
 /* ==================== CARDS ==================== */
@@ -59,10 +57,11 @@
 }
 
 .card {
-    background: linear-gradient(145deg, var(--cinza), var(--cor-fundo));
+    background: linear-gradient(145deg, var(--branco), var(--cor-branco));
     border: 1px solid var(--cor-tema-apagado);
     border-radius: 16px;
     padding: 20px;
+    overflow: none;
     text-align: center;
     transition: all 0.25s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -75,14 +74,14 @@
 }
 
 .card h5 {
-    color: var(--branco-light);
+    color: var(--preto);
     font-size: 0.9rem;
     margin-bottom: 8px;
 }
 
 .card h3 {
     font-size: 2rem;
-    color: var(--cor-verde);
+    color: var(--cor-tema);
 }
 
 /* ==================== GRÁFICOS ==================== */
@@ -94,7 +93,7 @@
 }
 
 .chart-box {
-    background: var(--cinza);
+    background: var(--cor-branco);
     border-radius: 16px;
     padding: 25px;
     border: 1px solid var(--cor-tema-apagado);
@@ -111,7 +110,7 @@
 
 .chart-title {
     font-size: 1.1rem;
-    color: var(--branco);
+    color: var(--preto);
     margin-bottom: 15px;
     display: flex;
     align-items: center;

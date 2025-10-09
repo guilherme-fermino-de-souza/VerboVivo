@@ -49,17 +49,16 @@
     </div>
 </div>
 
-{{-- Dados JSON para JS --}}
 <script id="dashboard-data" type="application/json">
-    {
-        !!json_encode([
-            'labels' => $dias,
-            'usuariosPorDia' => $usuariosPorDia,
-            'usuariosPorTipoKeys' => $usuariosPorTipoNomes - > keys(),
-            'usuariosPorTipoVals' => $usuariosPorTipoNomes - > values(),
-        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!
-    }
+{!! json_encode([
+    'labels' => $dias,
+    'usuariosPorDia' => $usuariosPorDia,
+    'usuariosPorTipoKeys' => $usuariosPorTipoNomes->keys()->toArray(),
+    'usuariosPorTipoVals' => $usuariosPorTipoNomes->values()->toArray(),
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}
 </script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{ url('assets/js/dashboard/dashboard.js') }}"></script>

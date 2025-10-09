@@ -4,7 +4,11 @@
 <link rel="stylesheet" href="{{ url('assets/css/contato/style.css') }}">
 
 <div class="contato-root">
-    <h1 class="titulo-contato">Mensagens de Contato</h1>
+    <div class="contato-inner">
+        <div class="title">
+        <span class="material-symbols-outlined">chat</span>
+        <h1 class="titulo-contato">Mensagens de Contato</h1>
+    </div>
 
     <table class="tabela-contatos">
         <thead>
@@ -17,28 +21,29 @@
         </thead>
         <tbody>
             @foreach ($contatos as $contato)
-                <tr>
-                    <td>{{ $contato->name }}</td>
-                    <td>{{ $contato->email }}</td>
-                    <td>{{ $contato->assunto }}</td>
-                    <td>
-                        <button 
-                            class="btn-vermais"
-                            data-nome="{{ $contato->name }}"
-                            data-email="{{ $contato->email }}"
-                            data-assunto="{{ $contato->assunto }}"
-                            data-texto="{{ $contato->texto }}"
-                            onclick="abrirModal(this)">
-                            Ver mais
-                        </button>
-                    </td>
-                </tr>
+            <tr>
+                <td>{{ $contato->name }}</td>
+                <td>{{ $contato->email }}</td>
+                <td>{{ $contato->assunto }}</td>
+                <td>
+                    <button
+                        class="btn-vermais"
+                        data-nome="{{ $contato->name }}"
+                        data-email="{{ $contato->email }}"
+                        data-assunto="{{ $contato->assunto }}"
+                        data-texto="{{ $contato->texto }}"
+                        onclick="abrirModal(this)">
+                        Ver mais
+                    </button>
+                </td>
+            </tr>
             @endforeach
         </tbody>
     </table>
 
     <div class="paginacao">
         {{ $contatos->links() }}
+    </div>
     </div>
 </div>
 

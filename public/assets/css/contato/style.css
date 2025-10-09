@@ -1,50 +1,86 @@
 :root {
     --cor-tema: #3B3F8C;
+    --cor-tema-apagado: #4449a1;
     --cor-fundo: #262626;
-    --branco: #F2F2F2;
+    --cor-branco: #D0D6D9;
+    --cor-preto: #000000;
+    --cor-vermelho: #F22222;
+
+    --preto: #0D0D0D;
     --cinza: #404040;
+    --branco: #F2F2F2;
+    --branco-light: #ccc;
+    --azul: #1d3e55;
+    --verde: #03A64A;
+    --cor-verde: #1dc967;
     --vermelho: #F26D6D;
-    --verde: #1dc967;
+    --roxo: #4B1C8C;
+    --laranja: #D92B04;
+    --amarelo: #F2B705;
 }
 
+
+/* Container principal */
 .contato-root {
-    padding: 20px;
-    color: var(--branco);
+    background-color: var(--branco);
+    color: var(--preto);
+    padding: 40px 60px;
+    gap: 30px;
 }
 
-.titulo-contato {
-    margin-bottom: 20px;
-    color: var(--cor-tema);
+.contato-root .contato-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* título */
+.title {
+    display: flex;
+    color: var(--preto);
+}
+
+.title span {
+    font-size: 3rem;
 }
 
 .tabela-contatos {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--cinza);
+    background-color: var(--branco);
+    color: var(--preto);
     border-radius: 8px;
     overflow: hidden;
 }
 
-.tabela-contatos th, .tabela-contatos td {
+.tabela-contatos th,
+.tabela-contatos td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--cor-tema);
+}
+
+.tabela-contatos tr {
+    transition: all 0.3s ease-in-out;
 }
 
 .tabela-contatos tr:hover {
-    background-color: #333;
+    background-color: var(--branco-light);
+    transform: translateX(5px);
+
 }
 
 .btn-vermais {
-    background-color: var(--cor-tema);
+    background-color: var(--cor-fundo);
     color: var(--branco);
     border: none;
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
+    transition: .3s;
 }
+
 .btn-vermais:hover {
-    background-color: var(--verde);
+    background-color: var(--cor-tema);
 }
 
 /* Modal */
@@ -54,23 +90,26 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .modal.hidden {
     display: none;
 }
+
 .modal-content {
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-branco);
     padding: 20px;
     border-radius: 10px;
     width: 500px;
-    color: var(--branco);
+    color: var(--preto);
     box-shadow: 0 0 10px #000;
     position: relative;
 }
+
 .modal-close {
     position: absolute;
     top: 10px;
@@ -83,9 +122,9 @@
 textarea {
     width: 100%;
     min-height: 100px;
-    background-color: #333;
+    background-color: var(--branco-light);
     color: var(--branco);
-    border: 1px solid #555;
+    border: 1px solid var(--cor-tema);
     border-radius: 8px;
     margin-top: 10px;
     padding: 8px;
@@ -93,13 +132,66 @@ textarea {
 
 .btn-responder {
     margin-top: 10px;
-    background-color: var(--verde);
+    background-color: var(--cor-fundo);
     color: var(--branco);
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
+    transition: .3s;
 }
+
 .btn-responder:hover {
-    background-color: #17a35f;
+    background-color: var(--cor-tema);
+}
+
+/* ================= PAGINAÇÃO ================= */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.paginacao ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+.paginacao li {
+    display: inline-block;
+}
+
+.paginacao li a,
+.paginacao li span {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--branco);
+    background-color: var(--cinza);
+    border: 1px solid var(--cor-tema-apagado);
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+.paginacao li a:hover {
+    background-color: var(--cor-tema);
+    border-color: var(--cor-tema);
+    color: var(--branco);
+}
+
+.paginacao li span {
+    background-color: var(--cor-tema);
+    border-color: var(--cor-tema);
+    font-weight: 700;
+}
+
+/* Desativado */
+.paginacao li.disabled span {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

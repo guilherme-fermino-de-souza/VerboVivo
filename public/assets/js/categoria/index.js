@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 data: chartData.values,
                 backgroundColor: [
                     "#3B3F8C",
-                    "#1dc967",
-                    "#F26D6D",
+                    "#03A64A",
+                    "#4B1C8C",
                     "#D92B04",
                     "#F2B705"
                 ],

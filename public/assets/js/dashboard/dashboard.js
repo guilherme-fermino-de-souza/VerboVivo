@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
             datasets: [{
                 label: "Usuários",
                 data: data.usuariosPorDia,
-                borderColor: "#4e73df",
-                backgroundColor: "rgba(78, 115, 223, 0.1)",
+                borderColor: "#3B3F8C",
+                backgroundColor: "#D0D6D9",
                 fill: true,
                 tension: 0.3
             }]
@@ -27,8 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
             labels: data.usuariosPorTipoKeys,
             datasets: [{
                 data: data.usuariosPorTipoVals,
-                backgroundColor: ["#4e73df", "#1cc88a", "#36b9cc", "#f6c23e", "#e74a3b"]
+                backgroundColor: ["#3B3F8C", "#F2B705", "#4B1C8C", "#F2B705", "#F22222"]
             }]
         }
     });
+
+    console.log("📊 Dados carregados:", data);
 });
