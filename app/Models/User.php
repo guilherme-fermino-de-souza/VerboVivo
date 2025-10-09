@@ -33,6 +33,8 @@ class User extends Authenticatable
         'cidade',
         'estado',
         'complemento',
+        'foto',
+        'status_conta',
         'tipo_usuario',
     ];
 
@@ -55,6 +57,7 @@ class User extends Authenticatable
         'cidade',
         'estado',
         'complemento',
+        'status_conta',
         'tipo_usuario',
     ];
 

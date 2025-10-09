@@ -29,7 +29,9 @@ return new class extends Migration
             $table->string('cidade')->nullable();
             $table->string('estado')->nullable();
             $table->string('complemento')->nullable();
+            $table->string('foto')->nullable(); //foto perfil
             $table->integer('tipo_usuario');
+            $table->string('status_conta');
             $table->rememberToken();
             $table->timestamps();
         });

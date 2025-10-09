@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\ConsumidorController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LivroController;
-use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,10 +48,42 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
         return view('admin.index');
     })->name('admin');
 
+    //Index
+    Route::get('/admin/index', [AdminController::class, 'index'])
+        ->middleware('auth')
+        ->name('admin.index');
+
+    //Create
+    Route::get('/admin/create', [AdminController::class, 'create'])
+        ->middleware('auth')
+        ->name('admin.create');
+
+    //Store
+    Route::get('/admin/store', [AdminController::class, 'store'])
+        ->middleware('auth')
+        ->name('admin.store');
+
+    //Destroy
+    Route::get('/admin/destroy', [AdminController::class, 'destroy'])
+        ->middleware('auth')
+        ->name('admin.destroy');
+
     //Categoria
     Route::resource("categorias", CategoriaController::class)
         ->names("categoria")
         ->parameters(["categorias" => "categoria"]);
+
+    //Contato Review
+    Route::get('/admin/contato', [ContatoController::class, 'index'])
+        ->middleware('auth')
+        ->name('contato.index');
+
+    Route::post('/admin/contato/responder', [ContatoController::class, 'responder'])->name('contato.responder');
+
+    // Dashboard
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+        ->middleware('auth')
+        ->name('dashboard.index');
 });
 
 require __DIR__ . '/auth.php';

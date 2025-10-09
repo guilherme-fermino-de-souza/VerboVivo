@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Contato;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -14,13 +15,12 @@ class ContatoController extends Controller
     {
         $contatos = Contato::paginate(10);
 
-        return view('content.contatos.index', ['contatos' => $contatos]); //View pega DATA do CONTROLLER
+        return view('admin.contato.index', ['contatos' => $contatos]); //View pega DATA do CONTROLLER
     }
 
     public function create()
     {
         return view('content.contatos.create');
-
     }
 
     public function store(Request $request)
@@ -75,5 +75,20 @@ class ContatoController extends Controller
     {
         $contato->delete();
         return redirect(route('content.contato.index'))->with('success', 'Contato apagado conm sucesso');
+    }
+
+    public function responder(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'mensagem' => 'required|string',
+        ]);
+
+        Mail::raw($request->mensagem, function ($message) use ($request) {
+            $message->to($request->email)
+                ->subject('Resposta do Administrador - Espectrum');
+        });
+
+        return back()->with('success', 'Resposta enviada com sucesso!');
     }
 }

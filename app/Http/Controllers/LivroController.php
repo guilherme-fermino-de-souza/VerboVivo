@@ -14,7 +14,7 @@ class LivroController extends Controller
         $livros = Livro::paginate(10);
         $categorias = Categoria::all();
 
-        return view('content.livros.index', compact('livros', 'categorias'));
+        return view('admin.livros.index', compact('livros', 'categorias'));
     }
     public function create()
     {

@@ -20,14 +20,18 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@site.com',
             'password' => Hash::make('123456'),
+            'status_conta' => 1,
             'tipo_usuario' => 1,
+            'foto' => 'Images/perfil/perfil-1.jpg'
         ]);
 
         $consumidor = User::factory()->create([
             'name' => 'consumidor',
             'email' => 'consumidor@site.com',
             'password' => Hash::make('123456'),
+            'status_conta' => 1,
             'tipo_usuario' => 2,
+            'foto' => 'Images/perfil/perfil-2.jpg'
         ]);
 
         Admin::factory()->create([

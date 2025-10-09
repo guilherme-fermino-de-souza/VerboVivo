@@ -39,9 +39,7 @@
     @can('visualizar-admin')
     <div class="admin-part">
         <ul class="admin-subnav">
-            <li><a href="{{route('categoria.index')}}">Categorias</a></li>
-            <li><a href="{{route('contato.index')}}">Contatos</a></li>
-            <li><a href="{{route('livro.index')}}">Livros</a></li>
+            <li><a href="{{route('dashboard.index')}}">Admin</a></li>
         </ul>
     </div>
 

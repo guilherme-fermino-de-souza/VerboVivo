@@ -1,0 +1,159 @@
+:root {
+    --cor-tema: #3B3F8C;
+    --cor-tema-apagado: #4449a1;
+    --cor-fundo: #262626;
+    --branco: #D0D6D9;
+    --cor-preto: #000000;
+    --cor-vermelho: #F22222;
+
+    --preto: #0D0D0D;
+    --cinza: #404040;
+    --branco: #F2F2F2;
+    --branco-light: #ccc;
+    --azul: #1d3e55;
+    --verde: #03A64A;
+    --cor-verde: #1dc967;
+    --vermelho: #F26D6D;
+    --roxo: #4B1C8C;
+    --laranja: #D92B04;
+    --amarelo: #F2B705;
+}
+
+/* ==================== GERAL ==================== */
+.dashboard-root {
+    background-color: var(--cor-fundo);
+    color: var(--branco);
+    min-height: 100vh;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.dashboard-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================== TÍTULO ==================== */
+.dashboard-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--branco);
+}
+
+.dashboard-title img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+/* ==================== CARDS ==================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg, var(--cinza), var(--cor-fundo));
+    border: 1px solid var(--cor-tema-apagado);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-tema);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.card h5 {
+    color: var(--branco-light);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: var(--cor-verde);
+}
+
+/* ==================== GRÁFICOS ==================== */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.chart-box {
+    background: var(--cinza);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid var(--cor-tema-apagado);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.chart-box--wide {
+    grid-column: span 1;
+}
+
+.chart-box--narrow {
+    grid-column: span 1;
+}
+
+.chart-title {
+    font-size: 1.1rem;
+    color: var(--branco);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-canvas-wrap {
+    width: 100%;
+    height: 300px;
+}
+
+.chart-canvas-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 900px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-box--wide,
+    .chart-box--narrow {
+        grid-column: auto;
+    }
+
+    .dashboard-root {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+}

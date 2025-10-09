@@ -4,106 +4,75 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\User;
-use App\Models\Telefone;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Listar todos os administradores
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = User::query()->where('tipo_usuario', 1); // apenas admins
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        $ordem = $request->input('ordem', 'desc');
+        $admins = $query->orderBy('created_at', $ordem)->paginate(10)->appends($request->all());
+
+        return view('admin.administradores.index', compact('admins'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Exibir formulário para criar novo admin
      */
     public function create()
     {
-        //
+        return view('admin.create-admin.index');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Armazenar novo administrador
      */
     public function store(Request $request)
     {
-        // 0. Validar Dados
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|lowercase|email|unique:tb_usuario,email',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|email|unique:users,email',
             'password' => 'required|string|min:6|max:255',
-            'cpf' => 'required|digits:11',
-            'data_nascimento' => 'required|date',
-            'tipo_usuario' => 'required|in:1',
-            'numero_telefone' => 'required|array|min:1',
-            'numero_telefone.*' => 'required|string|max:20'
         ]);
 
-        if ($request->tipo_usuario != 1) { // 0.5 Define tipo Admin = 1
-            abort(403, 'Tentativa de fraude no tipo de usuário.');
-        }
-
-        // 1. Criar Usuário Padrão
-        $usuario = User::create([
-            'nome' => $request->nome,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'cpf' => $request->cpf,
-            'data_nascimento' => $request->data_nascimento,
-            'tipo_usuario' => $request->tipo_usuario,
+        // Criar usuário como admin
+        $user = User::create([
+            'name'         => $request->name,
+            'email'        => $request->email,
+            'password'     => Hash::make($request->password),
+            'tipo_usuario' => 1, // 1 = admin
         ]);
 
-        // 2. Criar Dados Específicos Admin
+        // Relacionar na tabela admins
         Admin::create([
-            'usuario_id' => $usuario->id,
+            'usuario_id' => $user->id,
         ]);
-        // 3. Criar Telefone(s)
-        foreach ($request->numero_telefone as $telefone) {
-            Telefone::create([
-                'usuario_id' => $usuario->id,
-                'numero_telefone' => $telefone,
-            ]);
-        }
 
-        Auth::login($usuario); //entra direto nessa bagaça
-
-        return redirect()->route('welcome')->with('Sucesso', 'Usuário Tipo Admin cadastrado com sucesso!');
+        return redirect()->route('admin.index')->with('success', 'Administrador criado com sucesso!');
     }
 
     /**
-     * Display the specified resource.
+     * Remover um administrador
      */
-    public function show(Admin $admin)
+    public function destroy($id)
     {
-        //
-    }
+        $user = User::where('tipo_usuario', 1)->findOrFail($id);
+        $user->delete();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Admin $admin)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Admin $admin)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Admin $admin)
-    {
-        //
+        return redirect()->back()->with('success', 'Administrador excluído com sucesso!');
     }
 }

@@ -34,7 +34,7 @@ class UserFactory extends Factory
             'cidade'  =>  null,
             'estado'  =>  null,
             'complemento' =>  null,
-
+            'status_conta' => 1,
             'tipo_usuario' => 2, // 2 = consumidor(o user padrão)
         ];
     }

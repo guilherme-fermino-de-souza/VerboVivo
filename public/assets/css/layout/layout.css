@@ -1,0 +1,60 @@
+:root {
+    --cor-tema: #3B3F8C;
+    --cor-tema-apagado: #4449a1;
+    --cor-fundo: #262626;
+    --cor-branco: #D0D6D9;
+    --cor-preto: #000000;
+    --cor-vermelho: #F22222;
+
+    --preto: #0D0D0D;
+    --cinza: #404040;
+    --cinza-borda: #2f3336;
+    --branco: #F2F2F2;
+    --branco-light: #ccc;
+    --azul: #1d3e55;
+    --verde: #03A64A;
+    --vermelho: #F26D6D;
+
+    --texto-pequeno: .75rem;
+    --texto-padrao: 1rem;
+    --texto-secundario: 1.4rem;
+    --texto-titulo: 2.5rem;
+
+    /* cores para tema
+    antiga(ciano) - #017373*
+    azul claro - #048ABF/
+    */
+}
+
+body {
+    background-color: var(--branco);
+}
+
+/* body */
+.layout {
+    max-width: 100vw;
+    background-color: var(--branco);
+}
+
+/* conteúdo */
+.container-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    max-width: 1297px;
+    margin: auto;
+    background-color: var(--branco);
+}
+
+.container-main {
+    width: 600px;
+}
+
+/* Parte Admin */
+.admin {
+    max-width: 100%;
+}
+
+.admin .main {
+    width: 100%;
+}
